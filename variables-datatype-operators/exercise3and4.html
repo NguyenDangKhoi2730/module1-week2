@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <p>Nhập bán kính r:</p>
     <input type="number" id="inp">
@@ -12,15 +14,16 @@
     <p id="resultS"></p>
     <p id="resultC"></p>
     <script>
-        function enter(){
-            var r=+document.getElementById("inp").value;
-            var s=r*r*3.14;
-            var c=r*2*3.14;
-            document.getElementById("resultS").innerHTML="Diện tích hình tròn là:"+s;
-            document.getElementById("resultC").innerHTML="Chu vi hình tròn là"+c;
+        function enter() {
+            var r = +document.getElementById("inp").value;
+            var s = r * r * 3.14;
+            var c = r * 2 * 3.14;
+            document.getElementById("resultS").innerHTML = "Diện tích hình tròn là:" + s;
+            document.getElementById("resultC").innerHTML = "Chu vi hình tròn là" + c;
         }
     </script>
 
 
 </body>
+
 </html>
