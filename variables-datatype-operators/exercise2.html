@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="ic" placeholder="Độ C(Celsius)">
+    <button type="button" onclick="change()">Nhập</button><br>
+    <div id="result"></div>
+    <script>
+        function change() {
+            var doC = +document.getElementById("ic").value;
+            var doF = (9 * doC / 5) + 32;
+            document.getElementById("result").innerHTML = ("Kết quả:") + doF;
+        }
+    </script>
+</body>
+
+</html>
