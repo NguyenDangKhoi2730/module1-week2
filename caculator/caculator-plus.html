@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>CACULATOR</h2>
+    <input type="number" id="number1">
+    <input type="number" id="number2">
+    <p>
+        <button type="button" value="cong" onclick="go(this)">Addition(+)</button>
+        <button type="button" value="tru" onclick="go(this)">Subtraction(-)</button>
+        <button type="button" value="nhan" onclick="go(this)">Multiplication(x)</button>
+        <button type="button" value="chia" onclick="go(this)">Division(/)</button>
+    </p>
+    <p id="result">Result divition:</p>
+    <script>
+        function go(button) {
+            let a = +document.getElementById("number1").value;
+            let b = +document.getElementById("number2").value;
+            let c = button.value;
+            let result;
+            if (c == "cong") {
+                result = a + b;
+            } else if (c == "tru") {
+                result = a - b;
+            } else if (c == "nhan") {
+                result = a * b;
+            } else {
+                result = a / b;
+            }
+            document.getElementById("result").innerHTML = "Result:" + result;
+        }
+    </script>
+</body>
+
+</html>
