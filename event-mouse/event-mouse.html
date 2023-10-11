@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <img id="image" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Football_%28soccer_ball%29.svg"
+            style="width: 30%">
+        <p>Nhấn vào nút bên dưới để thấy quả bóng di chuyển</p>
+        <button type="button" onclick="move()">Click</button>
+    </form>
+    <script>
+        window.onload = run;
+        let img = document.getElementById("image");
+        function run() {
+            img.style.position = "relative";
+            img.style.left = "0px";
+        }
+        function move() {
+            img.style.left = parseInt(img.style.left) + 10 + "px";
+        }  
+    </script>
+</body>
+
+</html>
