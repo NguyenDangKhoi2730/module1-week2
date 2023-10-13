@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let abc;
+        abc = "<table border='1' cellspacing='0' width='300px'>";
+        for (let i = 1; i <= 10; i++) {
+            abc = abc + "<tr>";
+            for (let j = 1; j <= 10; j++) {
+                abc = abc + "<td>" + i * j + "</td>";
+            }
+            abc = abc + "</tr>";
+        }
+        document.write(abc);
+    </script>
+
+</body>
+
+</html>
