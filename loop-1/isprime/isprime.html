@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <script>
+    function ispri(k){
+        for(let i = 2; i<=Math.sqrt(k); i++){
+            if(k % i == 0) return false;
+        }
+        return true;
+    }
+    let n=+prompt("Nhập n: ");
+    let k = 2;
+    let cnt = 0;
+    while (true) {
+        if(ispri(k)) {document.write(k+"<br>");cnt++;}
+        
+        k++;
+        if(cnt == n) break;
+    }
+ </script>
+</body>
+</html>
