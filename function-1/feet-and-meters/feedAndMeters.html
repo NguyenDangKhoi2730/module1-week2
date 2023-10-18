@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function footToMeter(inputFoot) {
+            let numM = 0.305 * inputFoot;
+            return numM;
+        }
+        function meterToFoot(inputMeter) {
+            let numF = 3.279 * inputMeter;
+            return numF;
+        }
+        let inputFoot = +prompt("Nhập foot:");
+
+        let inputMeter = +prompt("Nhập mét:");
+        document.write(inputFoot + " foot = " + footToMeter(inputFoot) + " meter" + "</br>");
+        document.write(inputMeter + " meter = " + meterToFoot(inputMeter) + " foot");
+
+    </script>
+</body>
+
+</html>
