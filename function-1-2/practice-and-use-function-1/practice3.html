@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function parameters(x, y) {
+            let result = false;
+            if (x > y) {
+                result = true;
+                return result;
+            }
+        }
+        let a = +prompt("Nhập số thứ nhất:");
+        let b = +prompt("Nhập số thứ hai:");
+        let c = parameters(a, b)
+        if (c) {
+            alert("a lớn hơn b");
+        } else {
+            alert("Tổng của hai số là: " + (a + b));
+        }
+
+    </script>
+</body>
+
+</html>
