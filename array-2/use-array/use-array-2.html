@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function insert(number) {
+            let result = number[0];
+            for (let i = 1; i < number.length; i++) {
+                if ((number[i - 1] % 2 === 0) && (number[i] % 2 === 0)) {
+                    result += "-" + number[i];
+                } else {
+                    result += number[i];
+                }
+            }
+            return result;
+        }
+
+        let num = prompt("Enter your number: ");
+        let newArray = insert(num)
+        alert(newArray);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="string">
+    <button type="button" onclick="dich()">Dịch</button>
+    <p id="result"></p>
+
+    <script>
+        function dich() {
+            let English = ["banana", "orange", "watermelon", "apple", "rambutan"];
+            let Vietnamese = ["chuối", "cam", "dưa hấu", "táo", "chôm chôm"];
+            let result ="Không tìm thấy từ";
+            let string = document.getElementById("string").value;
+            for (let i = 0; i < English.length; i++) {
+                if (string == English[i]) {
+                    result=Vietnamese[i];
+                    break;
+                }
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+
+    </script>
+</body>
+
+</html>
