@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="carogame">
+        <input type="button" value="Change Value" onclick="changeValue()">
+    </p>
+
+    <script>
+        let b = document.getElementById("carogame");
+        let board = [];
+        let display = "";
+        for (let i = 0; i < 5; i++) {
+            board[i] = [0, 0, 0, 0, 0];
+        }
+
+        for (let i = 0; i < 5; i++) {
+            display += "</br>";
+            for (let j = 0; j < 5; j++) {
+                display += board[i][j] + "&nbsp;&nbsp;";
+            }
+        }
+        display += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+        b.innerHTML = display;
+
+        function changeValue() {
+            let Xvalue = prompt("X= ");
+            let Yvalue = prompt("Y= ");
+            display = "";
+            board[Xvalue][Yvalue] = "x";
+            for (let i = 0; i < 5; i++) {
+                display += "</br>";
+                for (let j = 0; j < 5; j++) {
+                    display += board[i][j] + "&nbsp;&nbsp;";
+                }
+            }
+            display += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+            b.innerHTML = "<hr/>" + display;
+        }
+    </script>
+</body>
+
+</html>
