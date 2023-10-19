@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p><button onclick="binhphuong()">Tính bình phương</button></p>
+    <p><button onclick="chuvidientich()">Tính diện tích & chu vi</button></p>
+    <p><button onclick="giaithua()">Tính giai thừa</button></p>
+    <p><button onclick="kiemtra()">Kiểm tra kí tự nhập vào</button></p>
+    <p><button onclick="minvalue()">Tìm giá trị nhỏ nhất</button></p>
+    <p><button onclick="kiemtranguyenduong()">Kiểm tra số nguyên dương</button></p>
+    <p><button onclick="swapnumber()">Đổi chỗ hai số nguyên</button></p>
+    <p><button onclick="swapArray()">Đảo ngược mảng</button></p>
+    <p><button onclick="kiemtrakytu()">Điếm số lần xuất hiện</button></p>
+
+    <script>
+
+        function binhphuong() {
+            let num = +prompt("Nhập số cần tính bình phương: ");
+            let result = 0;
+            function tinh(x) {
+                result = x * x;
+                return result;
+            }
+            alert("Bình phương của số " + num + " là " + tinh(num))
+        }
+
+        function chuvidientich() {
+            let num = +prompt("Nhập bán kính để tính chu vi và diện tích (r= )");
+            let c = 0;
+            let s = 0;
+            function chuvi(x) {
+                c = 2 * x * 3.14;
+                return c;
+            }
+            function dientich(x) {
+                s = x * x * 3.14;
+                return s;
+            }
+            alert("Chu vi hình tròn là: " + chuvi(num) + "\nDiện tích hình tròn là: " + dientich(num));
+        }
+
+        function giaithua() {
+            let num = +prompt("Nhập số cần tính giai thừa: !");
+            let result = 1;
+            function tinhgiaithua() {
+                for (let i = 1; i <= num; i++) {
+                    result = result * i;
+                }
+                return result;
+            }
+            alert(tinhgiaithua());
+        }
+
+        function kiemtra() {
+            function kiemTraKyTuSo(kyTu) {
+                let so = /^[0-9]+$/;
+                if (kyTu.match(so)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            let so = prompt("Nhập số để kiểm tra: ");
+            if (kiemTraKyTuSo(so)) {
+                alert(so + " là số")
+            } else {
+                alert(so + " không phải là số")
+            }
+        }
+
+        function minvalue() {
+            let number1 = +prompt("Nhập số thứ nhất:");
+            let number2 = +prompt("Nhập số thứ hai:");
+            let number3 = +prompt("Nhập số thứ ba:");
+            let arrNumber = [number1, number2, number3];
+            let minNumber = number1
+            for (let i = 0; i < arrNumber.length; i++) {
+                if (arrNumber[i] < minNumber) {
+                    minNumber = arrNumber[i];
+                }
+            }
+            alert("Số nhỏ nhất là: " + minNumber);
+        }
+
+        function kiemtranguyenduong() {
+            let num = +prompt("Nhập số cần kiểm tra:");
+            if (num > 0) {
+                alert(num + " là số nguyên dương")
+            } else {
+                alert(num + " không phải là số nguyên dương")
+            }
+        }
+
+        function swapnumber() {
+            let number1 = +prompt("Nhập số nguyên thứ nhất:");
+            let number2 = +prompt("Nhập số nguyên thứ 2:");
+            let index = number1;
+            number1 = number2;
+            number2 = index;
+            alert("Số thứ nhất là: " + number1);
+            alert("Số thứ hai là: " + number2);
+        }
+
+        function swapArray() {
+            let n = +prompt("Nhập n số phần tử trong mảng");
+            let i = 1;
+            arr = [];
+            while (i <= n) {
+                let x = +prompt("Nhập số thứ " + i);
+                arr.push(x);
+                i++;
+            }
+            console.log(arr);
+            arr.reverse();
+            console.log(arr);
+        }
+
+        function kiemtrakytu() {
+            let arr = [];
+            let n = +prompt("Nhập số lượng ký tự trong mảng: ");
+            let i = 1
+            while (i <= n) {
+                let x = prompt("Nhập ký tự thứ: " + i);
+                arr.push(x);
+                i++;
+            }
+            let x = prompt("Nhập ký tự muốn kiểm tra: ");
+            function testKytu(array, kyTuTest) {
+                let index = 0;
+                for (let k = 0; k < array.length; k++) {
+                    if (array[k] == kyTuTest) {
+                        index++;
+                    }
+                }
+                return index > 0 ? index : -1;
+            }
+            alert("Số lần xuất hiện của ký tự " + x + " là " + testKytu(arr, x));
+        }
+    </script>
+</body>
+
+</html>
