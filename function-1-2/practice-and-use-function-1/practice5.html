@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let inputStar = prompt("Nhập từ");
+        let outputStar = ["Không tìm thấy"];
+
+        function star(inp) {
+            let arr1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+            let arr2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"]
+            for (let i = 0; i < arr1.length; i++) {
+                if (inputStar == arr1[i]) {
+                    outputStar = arr2[i];
+                }
+            }
+            return outputStar;
+        }
+
+        alert(star(inputStar));
+    </script>
+</body>
+
+</html>
