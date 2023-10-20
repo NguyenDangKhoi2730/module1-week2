@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        class Rectangle {
+            constructor(length, width) {
+                this.length = length;
+                this.width = width;
+            }
+            getArea() {
+                return this.length * this.width;
+            }
+            getPerimeter() {
+                return 2 * (this.length + this.width);
+            }
+            draw() {
+                let canvas = document.createElement("canvas");
+                canvas.width = this.length;
+                canvas.height = this.width;
+                let ctx = canvas.getContext("2d");
+                ctx.fillStyle = "blue";
+                ctx.fillRect(0, 0, this.length, this.width);
+                document.body.appendChild(canvas);
+            }
+        }
+
+        let rect = new Rectangle(50,100);
+
+        rect.draw();
+        rect.length = 60;
+        rect.width = 120;
+        console.log("Dien tich: " + rect.getArea());
+        console.log("Chu vi: " + rect.getPerimeter());
+    </script>
+</body>
+
+</html>
