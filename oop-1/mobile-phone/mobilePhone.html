@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Mobile {
+            constructor() {
+                this.battery = 100;
+                this.power = false;
+                this.draft = "";
+                this.inbox = [];
+                this.sent = [];
+            }
+
+            checkPower() {
+                return this.power;
+            }
+
+            togglePower() {
+                this.power = !this.power;
+            }
+
+            charge() {
+                if (this.battery < 100) {
+                    this.battery++;
+                }
+            }
+
+            draftMessage(message) {
+                if (this.battery > 0 && this.power == true) {
+                    this.draft = message;
+                    this.battery--;
+                }
+            }
+
+            receiveMessage(message) {
+                if (this.battery > 0 && this.power == true) {
+                    this.inbox.push(message);
+                    this.battery--;
+                }
+            }
+
+            sendMessage(receiver) {
+                if (this.battery > 0 && this.power == true && this.draft != "") {
+                    receiver.receiveMessage(this.draft);
+                    this.sent.push(this.draft);
+                    this.draft = "";
+                    this.battery--;
+                }
+            }
+
+            viewInbox() {
+                if (this.battery > 0 && this.power == true) {
+                    console.log(this.inbox);
+                    this.battery--;
+                }
+            }
+
+            viewSent() {
+                if (this.battery > 0 && this.power == true) {
+                    console.log(this.sent);
+                    this.battery--;
+                }
+            }
+        }
+
+        let nokia = new Mobile();
+        let iphone = new Mobile();
+
+        nokia.togglePower();
+        iphone.togglePower();
+
+        nokia.draftMessage("xin chao, day la nokia!");
+        nokia.sendMessage(iphone);
+       
+        
+        iphone.viewInbox();
+    </script>
+</body>
+
+</html>
