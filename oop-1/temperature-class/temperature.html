@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Temperature {
+            constructor(celsius) {
+                if (celsius < -273) {
+                    throw new Error("Nhiet do k the nho hon -273 do C");
+                }
+                this.celsius = celsius;
+            }
+
+            fahrenheit() {
+                return 9 / 5 * this.celsius + 32;
+            }
+            kelvin() {
+                return this.celsius + 273.15;
+            }
+        }
+        let temp = new Temperature(25);
+        document.write("Fahrenheit= " + temp.fahrenheit() + "<br>");
+        document.write("Kelvin= " + temp.kelvin());
+    </script>
+</body>
+
+</html>
